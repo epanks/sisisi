@@ -15,7 +15,10 @@ class BalaiController extends Controller
      */
     public function index()
     {
-        return Balai::latest()->paginate(10);
+        $model = Balai::all();
+        return response()->json([
+            'data' => $model
+        ]);
     }
 
     /**
