@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Satker extends Model
 {
-    protected $table = 'users';
+    protected $table = 'tbl_satker';
 
 
     protected $fillable = [
-        'name', 'email', 'password', 'bio', 'type', 'photo'
-    ];
-
-
-    protected $hidden = [
-        'password', 'remember_token',
+        'kdsatker', 'nmsatker', 'balai_id'
     ];
 }

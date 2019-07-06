@@ -15,7 +15,10 @@ class SatkerController extends Controller
      */
     public function index()
     {
-        return Satker::latest()->paginate(10);
+        $model = Satker::all();
+        return response()->json([
+            'data' => $model
+        ]);
     }
 
     /**
@@ -27,16 +30,13 @@ class SatkerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:225',
-            'password' => 'required|string|min:6'
+            'kdsatker' => 'required|string|max:225',
+            'nmsatker' => 'required|string|min:6'
         ]);
         return Satker::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'type' => $request['type'],
-            'bio' => $request['bio'],
-            'photo' => $request['photo'],
-            'password' => $request['password']
+            'kdsatker' => $request['kdsatker'],
+            'nmsatker' => $request['nmsatker'],
+            'balai_id' => $request['balai_id']
         ]);
     }
 

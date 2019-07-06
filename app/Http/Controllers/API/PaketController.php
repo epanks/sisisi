@@ -27,16 +27,26 @@ class PaketController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:225',
-            'password' => 'required|string|min:6'
+            'nmpaket' => 'required|string|max:255'
         ]);
         return Paket::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'type' => $request['type'],
-            'bio' => $request['bio'],
-            'photo' => $request['photo'],
-            'password' => $request['password']
+            'nmpaket' => $request['nmpaket'],
+            'pagurmp' => $request['pagurmp'],
+            'output' => $request['output'],
+            'satoutput' => $request['satoutput'],
+            'outcome' => $request['outcome'],
+            'satoutcome' => $request['satoutcome'],
+            'kdpengadaan' => $request['kdpengadaan'],
+            'kdjnspaket' => $request['kdjnspaket'],
+            'kdjnskon' => $request['kdjnskon'],
+            'kdoutput' => $request['kdoutput'],
+            'id_progres' => $request['id_progres'],
+            'id_tayang' => $request['id_tayang'],
+            'id_kontrak' => $request['id_kontrak'],
+            'thnanggaran' => $request['thnanggaran'],
+            'kdsatker' => $request['kdsatker'],
+            'id_note' => $request['id_note'],
+            'id_masalah' => $request['id_masalah']
         ]);
     }
 

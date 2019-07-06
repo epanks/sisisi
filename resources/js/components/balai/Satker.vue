@@ -18,18 +18,16 @@
             <tbody>
               <tr>
                 <th>ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Type</th>
-                <th>Registered</th>
+                <th>Kode Satker</th>
+                <th>Nama Satker</th>
+                <th>ID Balai</th>
                 <th>Modify</th>
               </tr>
               <tr v-for="satker in satkerdt" :key="satker.id">
                 <td>{{satker.id}}</td>
-                <td>{{satker.name}}</td>
-                <td>{{satker.email}}</td>
-                <td>{{satker.type}}</td>
-                <td>{{satker.created_at}}</td>
+                <td>{{satker.kdsatker}}</td>
+                <td>{{satker.nmsatker}}</td>
+                <td>{{satker.balai_id}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -68,38 +66,28 @@
             <div class="modal-body">
               <div class="form-group">
                 <input
-                  v-model="form.name"
+                  v-model="form.kdsatker"
                   type="text"
-                  name="name"
-                  placeholder="Nama Satker"
+                  name="kdsatker"
+                  placeholder="Kode Satker"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('name') }"
+                  :class="{ 'is-invalid': form.errors.has('kdsatker') }"
                 />
-                <has-error :form="form" field="name"></has-error>
+                <has-error :form="form" field="kdsatker"></has-error>
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.email"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
+                  v-model="form.nmsatker"
+                  type="text"
+                  name="nmsatker"
+                  placeholder="Nama Satker"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('email') }"
+                  :class="{ 'is-invalid': form.errors.has('nmsatker') }"
                 />
-                <has-error :form="form" field="email"></has-error>
+                <has-error :form="form" field="nmsatker"></has-error>
               </div>
-              <div class="form-group">
-                <textarea
-                  v-model="form.bio"
-                  id="bio"
-                  name="bio"
-                  placeholder="Short bio for satker (Optional)"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('bio') }"
-                />
-                <has-error :form="form" field="bio"></has-error>
-              </div>
-              <div class="form-group">
+              
+              <!-- <div class="form-group">
                 <select
                   v-model="form.type"
                   type="type"
@@ -114,17 +102,17 @@
                   <option value="author">Author</option>
                 </select>
                 <has-error :form="form" field="type"></has-error>
-              </div>
+              </div> -->
               <div class="form-group">
                 <input
-                  v-model="form.password"
-                  type="password"
-                  name="password"
-                  id="password"
+                  v-model="form.balai_id"
+                  type="number"
+                  name="balai_id"
+                  placeholder="ID Balai"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('password') }"
+                  :class="{ 'is-invalid': form.errors.has('balai_id') }"
                 />
-                <has-error :form="form" field="password"></has-error>
+                <has-error :form="form" field="balai_id"></has-error>
               </div>
             </div>
             <div class="modal-footer">
@@ -145,12 +133,9 @@ export default {
     return {
       satkerdt: {},
       form: new Form({
-        name: "",
-        email: "",
-        password: "",
-        type: "",
-        bio: "",
-        photo: ""
+        kdsatker: "",
+        nmsatker: "",
+        balai_id: ""
       })
     };
   },

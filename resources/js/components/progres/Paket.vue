@@ -17,19 +17,40 @@
           <table class="table table-hover">
             <tbody>
               <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Type</th>
-                <th>Registered</th>
+                <th>No</th>
+                <th>Nama Paket</th>
+                <th>Pagu</th>
+                <th>Output</th>
+                <th>Satuan Output</th>
+                <th>Outcome</th>
+                <th>Satuan Outcome</th>
+                <th>Kode Pengadaan</th>
+                <th>Kode Jenis Paket</th>
+                <th>Kode Jenis Kons</th>
+                <th>Kode Output</th>
+                <th>Tahun Anggaran</th>
+                <th>Kode Satker</th>
                 <th>Modify</th>
               </tr>
               <tr v-for="paket in paketdt" :key="paket.id">
-                <td>{{paket.id}}</td>
-                <td>{{paket.name}}</td>
-                <td>{{paket.email}}</td>
-                <td>{{paket.type}}</td>
-                <td>{{paket.created_at}}</td>
+                <td scope="row">{{paket.id}}</td>
+                <td>{{paket.nmpaket}}</td>
+                <td>{{paket.pagurmp | numeral('0,0')}}</td>
+                <td>{{paket.output| numeral('0,0.00')}}</td>
+                <td>{{paket.satoutput}}</td>
+                <td>{{paket.outcome| numeral('0,0.00')}}</td>
+                <td>{{paket.satoutcome}}</td>
+                <td>{{paket.kdpengadaan}}</td>
+                <td>{{paket.kdjnspaket}}</td>
+                <td>{{paket.kdjnskon}}</td>
+                <td>{{paket.kdoutput}}</td>
+                <td>{{paket.id_progres}}</td>
+                <td>{{paket.id_tayang}}</td>
+                <td>{{paket.id_kontrak}}</td>
+                <td>{{paket.thnanggaran}}</td>
+                <td>{{paket.kdsatker}}</td>
+                <td>{{paket.id_note}}</td>
+                <td>{{paket.id_masalah}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -68,63 +89,158 @@
             <div class="modal-body">
               <div class="form-group">
                 <input
-                  v-model="form.name"
+                  v-model="form.nmpaket"
                   type="text"
-                  name="name"
+                  name="nmpaket"
                   placeholder="Nama Paket"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('name') }"
+                  :class="{ 'is-invalid': form.errors.has('nmpaket') }"
                 />
-                <has-error :form="form" field="name"></has-error>
+                <has-error :form="form" field="nmpaket"></has-error>
+              </div>
+
+              <div class="form-group">
+                <input
+                  v-model="form.pagurmp"
+                  type="number"
+                  name="pagurmp"
+                  placeholder="Pagu"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('pagurmp') }"
+                />
+                <has-error :form="form" field="pagurmp"></has-error>
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.email"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
+                  v-model="form.output"
+                  type="number"
+                  name="output"
+                  placeholder="Output"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('email') }"
+                  :class="{ 'is-invalid': form.errors.has('output') }"
                 />
-                <has-error :form="form" field="email"></has-error>
-              </div>
-              <div class="form-group">
-                <textarea
-                  v-model="form.bio"
-                  id="bio"
-                  name="bio"
-                  placeholder="Short bio for paket (Optional)"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('bio') }"
-                />
-                <has-error :form="form" field="bio"></has-error>
-              </div>
-              <div class="form-group">
-                <select
-                  v-model="form.type"
-                  type="type"
-                  name="type"
-                  placeholder="type Address"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('type') }"
-                >
-                  <option value>Select Paket Role</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">Standard Paket</option>
-                  <option value="author">Author</option>
-                </select>
-                <has-error :form="form" field="type"></has-error>
+                <has-error :form="form" field="output"></has-error>
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.password"
-                  type="password"
-                  name="password"
-                  id="password"
+                  v-model="form.satoutput"
+                  type="text"
+                  name="satoutput"
+                  placeholder="Satuan Output"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('password') }"
+                  :class="{ 'is-invalid': form.errors.has('satoutput') }"
                 />
-                <has-error :form="form" field="password"></has-error>
+                <has-error :form="form" field="satoutput"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.outcome"
+                  type="number"
+                  name="outcome"
+                  placeholder="Outcome"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('outcome') }"
+                />
+                <has-error :form="form" field="outcome"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.satoutcome"
+                  type="text"
+                  name="satoutcome"
+                  placeholder="Satuan Outcome"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('satoutcome') }"
+                />
+                <has-error :form="form" field="satoutcome"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.kdpengadaan"
+                  type="text"
+                  name="kdpengadaan"
+                  placeholder="Kode Pengadaan"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('kdpengadaan') }"
+                />
+                <has-error :form="form" field="kdpengadaan"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.kdjnspaket"
+                  type="text"
+                  name="kdjnspaket"
+                  placeholder="Kode Jenis Paket"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('kdjnspaket') }"
+                />
+                <has-error :form="form" field="kdjnspaket"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.kdjnskon"
+                  type="text"
+                  name="kdjnskon"
+                  placeholder="Kode Jenis Kon"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('kdjnskon') }"
+                />
+                <has-error :form="form" field="kdjnskon"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.kdoutput"
+                  type="text"
+                  name="kdoutput"
+                  placeholder="Kode Output"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('kdoutput') }"
+                />
+                <has-error :form="form" field="kdoutput"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.thnanggaran"
+                  type="number"
+                  name="thnanggaran"
+                  placeholder="Tahun Anggaran"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('thnanggaran') }"
+                />
+                <has-error :form="form" field="thnanggaran"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.kdsatker"
+                  type="text"
+                  name="kdsatker"
+                  placeholder="Kode Satker"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('kdsatker') }"
+                />
+                <has-error :form="form" field="kdsatker"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.id_note"
+                  type="number"
+                  name="id_note"
+                  placeholder="Note"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('id_note') }"
+                />
+                <has-error :form="form" field="id_note"></has-error>
+              </div>
+              <div class="form-group">
+                <input
+                  v-model="form.id_masalah"
+                  type="number"
+                  name="id_masalah"
+                  placeholder="Note"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('id_masalah') }"
+                />
+                <has-error :form="form" field="id_masalah"></has-error>
               </div>
             </div>
             <div class="modal-footer">
@@ -145,12 +261,23 @@ export default {
     return {
       paketdt: {},
       form: new Form({
-        name: "",
-        email: "",
-        password: "",
-        type: "",
-        bio: "",
-        photo: ""
+        nmpaket: "",
+        pagurmp: "",
+        output: "",
+        satoutput: "",
+        outcome: "",
+        satoutcome: "",
+        kdpengadaan: "",
+        kdjnspaket: "",
+        kdjnskon: "",
+        kdoutput: "",
+        id_progres: "",
+        id_tayang: "",
+        id_kontrak: "",
+        thnanggaran: "",
+        kdsatker: "",
+        id_note: "",
+        id_masalah: ""
       })
     };
   },
