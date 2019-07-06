@@ -16,3 +16,19 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResources(['user' => 'API\UserController']);
+Route::apiResources(['provinsi' => 'API\ProvinsiController']);
+Route::apiResources(['kecamatan' => 'API\KecamatanController']);
+Route::apiResources(['kabupaten' => 'API\KabupatenController']);
+Route::apiResources(['desa' => 'API\DesaController']);
+Route::apiResources(['paket' => 'API\PaketController']);
+Route::apiResources(['stock' => 'API\StockController']);
+Route::apiResources(['baseline' => 'API\BaselineController']);
+Route::apiResources(['wdse' => 'API\WdseController']);
+Route::apiResources(['sungai' => 'API\SungaiController']);
+Route::apiResources(['pah' => 'API\PahController']);
+Route::apiResources(['ma' => 'API\MaController']);
+Route::apiResources(['at' => 'API\ATController']);
+Route::apiResources(['balai' => 'API\BalaiController']);
+Route::apiResources(['satker' => 'API\SatkerController']);

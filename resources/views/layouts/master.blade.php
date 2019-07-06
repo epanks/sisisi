@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <img src="./img/logo.png" alt="sisisi Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">sisisi</span>
@@ -78,7 +78,179 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </p>
                 </router-link>
             </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-building green"></i>
+                  <p>
+                    Balai
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <router-link to="/satker" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <p>Satker</p>
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/balai" class="nav-link">
+                            <i class="fas fa-building nav-icon purple"></i>
+                            <p>Balai</p>
+                        </router-link>
+                    </li>
 
+                </ul>
+              </li>
+            <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-tasks orange"></i>
+                      <p>
+                        e-Programming
+                        <i class="right fa fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <router-link to="/stock" class="nav-link">
+                          <i class="fas fa-building nav-icon"></i>
+                          <p>Stock</p>
+                        </router-link>
+                      </li>
+
+                      <li class="nav-item">
+                        <router-link to="/baseline" class="nav-link">
+                          <i class="nav-icon fas fa-list-alt"></i>
+                          <p>Baseline</p>
+                        </a>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+            <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-bar green"></i>
+                      <p>
+                        Progres
+                        <i class="right fa fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <router-link to="/balai" class="nav-link">
+                          <i class="fas fa-building nav-icon"></i>
+                          <p>Balai</p>
+                        </router-link>
+                      </li>
+
+                      <li class="nav-item">
+                        <router-link to="/paket" class="nav-link">
+                          <i class="nav-icon fas fa-list-alt"></i>
+                          <p>Paket</p>
+                        </a>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-database orange"></i>
+                      <p>
+                        Database
+                        <i class="right fa fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <router-link to="/balai" class="nav-link">
+                          <i class="fas fa-building nav-icon white"></i>
+                          <p>Balai</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/at_db" class="nav-link">
+                          <i class="nav-icon fas fa-circle-notch"></i>
+                          <p>Air Tanah</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                          <i class="fa fa-building nav-tint"></i>
+                          <p>Air Permukaan
+                          <i class="right fa fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <router-link to="/sungai_db" class="nav-link">
+                          <i class="fas fa-building nav-icon"></i>
+                          <p>Sungai</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/wdse_db" class="nav-link">
+                          <i class="fas fa-water nav-icon"></i>
+                          <p>Waduk</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/ma_db" class="nav-link">
+                          <i class="fas fa-circle nav-icon"></i>
+                          <p>Mata Air</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/pah_db" class="nav-link">
+                          <i class="fas fa-home nav-icon"></i>
+                          <p>PAH</p>
+                        </router-link>
+                      </li>
+                    </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-globe-asia cyan"></i>
+                      <p>
+                        Wilayah
+                        <i class="right fa fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <router-link to="/provinsi" class="nav-link">
+                          <i class="fas fa-map nav-icon yellow"></i>
+                          <p>Provinsi</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                            <router-link to="/kabupaten" class="nav-link">
+                              <i class="fas fa-map-marked nav-icon purple"></i>
+                              <p>Kabupaten</p>
+                            </router-link>
+                          </li>
+                          <li class="nav-item">
+                                <router-link to="/kecamatan" class="nav-link">
+                                  <i class="fas fa-map-marker nav-icon blue"></i>
+                                  <p>Kecamatan</p>
+                                </router-link>
+                              </li>
+                              <li class="nav-item">
+                                    <router-link to="/desa" class="nav-link">
+                                      <i class="fas fa-map-marker-alt nav-icon green"></i>
+                                      <p>Desa</p>
+                                    </router-link>
+                                  </li>
+                      <li class="nav-item">
+                        <router-link to="/balai" class="nav-link">
+                          <i class="nav-icon fas fa-building blue"></i>
+                          <p>Balai</p>
+                        </a>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -98,6 +270,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             </ul>
           </li>
+          <li class="nav-item">
+                <router-link to="/developer" class="nav-link">
+                    <i class="nav-icon fas fa-cogs"></i>
+                    <p>
+                        Developer
+                    </p>
+                </router-link>
+         </li>
           <li class="nav-item">
                 <router-link to="/profile" class="nav-link">
                     <i class="nav-icon fas fa-user orange"></i>

@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Dashboard List</h3>
+          <h3 class="card-title">Developer List</h3>
 
           <div class="card-tools">
             <button class="btn btn-success" data-toggle="modal" data-target="#addNew">
@@ -138,7 +138,14 @@
 export default {
   data() {
     return {
-      form: new Form([])
+      form: new Form({
+        name: "",
+        email: "",
+        password: "",
+        type: "",
+        bio: "",
+        photo: ""
+      })
     };
   },
   mounted() {

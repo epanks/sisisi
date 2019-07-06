@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Users List</h3>
+          <h3 class="card-title">Balaidt List</h3>
 
           <div class="card-tools">
             <button class="btn btn-success" data-toggle="modal" data-target="#addNew">
@@ -18,18 +18,14 @@
             <tbody>
               <tr>
                 <th>ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Type</th>
-                <th>Registered</th>
+                <th>Nama Balai</th>
+                <th>ID Wilayah</th>
                 <th>Modify</th>
               </tr>
-              <tr v-for="user in users" :key="user.id">
-                <td>{{user.id}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.type}}</td>
-                <td>{{user.created_at}}</td>
+              <tr v-for="balai in balaidt" :key="balai.id">
+                <td>{{balai.id}}</td>
+                <td>{{balai.nmbalai}}</td>
+                <td>{{balai.id_wilayah}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -64,42 +60,32 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form @submit.prevent="createUser">
+          <form @submit.prevent="createBalai">
             <div class="modal-body">
               <div class="form-group">
                 <input
-                  v-model="form.name"
+                  v-model="form.nmbalai"
                   type="text"
-                  name="name"
-                  placeholder="Nama User"
+                  name="nmbalai"
+                  placeholder="Nama Balai"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('name') }"
+                  :class="{ 'is-invalid': form.errors.has('nmbalai') }"
                 />
-                <has-error :form="form" field="name"></has-error>
+                <has-error :form="form" field="nmbalai"></has-error>
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.email"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
+                  v-model="form.id_wilayah"
+                  type="number"
+                  name="id_wilayah"
+                  placeholder="ID Wilayah"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('email') }"
+                  :class="{ 'is-invalid': form.errors.has('id_wilayah') }"
                 />
-                <has-error :form="form" field="email"></has-error>
+                <has-error :form="form" field="id_wilayah"></has-error>
               </div>
-              <div class="form-group">
-                <textarea
-                  v-model="form.bio"
-                  id="bio"
-                  name="bio"
-                  placeholder="Short bio for user (Optional)"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('bio') }"
-                />
-                <has-error :form="form" field="bio"></has-error>
-              </div>
-              <div class="form-group">
+
+              <!-- <div class="form-group">
                 <select
                   v-model="form.type"
                   type="type"
@@ -108,24 +94,13 @@
                   class="form-control"
                   :class="{ 'is-invalid': form.errors.has('type') }"
                 >
-                  <option value>Select User Role</option>
+                  <option value>Select Balai Role</option>
                   <option value="admin">Admin</option>
-                  <option value="user">Standard User</option>
+                  <option value="user">Standard Balai</option>
                   <option value="author">Author</option>
                 </select>
                 <has-error :form="form" field="type"></has-error>
-              </div>
-              <div class="form-group">
-                <input
-                  v-model="form.password"
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('password') }"
-                />
-                <has-error :form="form" field="password"></has-error>
-              </div>
+              </div>-->
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -143,27 +118,23 @@
 export default {
   data() {
     return {
-      users: {},
+      balaidt: {},
       form: new Form({
-        name: "",
-        email: "",
-        password: "",
-        type: "",
-        bio: "",
-        photo: ""
+        nmbalai: "",
+        id_wilayah: ""
       })
     };
   },
   methods: {
-    loadUsers() {
-      axios.get("api/user").then(({ data }) => (this.users = data.data));
+    loadBalaidt() {
+      axios.get("api/balai").then(({ data }) => (this.balaidt = data.data));
     },
-    createUser() {
-      this.form.post("api/user");
+    createBalai() {
+      this.form.post("api/balai");
     }
   },
   created() {
-    this.loadUsers();
+    this.loadBalaidt();
   }
 };
 </script>

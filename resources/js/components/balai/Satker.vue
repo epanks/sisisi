@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Users List</h3>
+          <h3 class="card-title">Satkerdt List</h3>
 
           <div class="card-tools">
             <button class="btn btn-success" data-toggle="modal" data-target="#addNew">
@@ -24,12 +24,12 @@
                 <th>Registered</th>
                 <th>Modify</th>
               </tr>
-              <tr v-for="user in users" :key="user.id">
-                <td>{{user.id}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.type}}</td>
-                <td>{{user.created_at}}</td>
+              <tr v-for="satker in satkerdt" :key="satker.id">
+                <td>{{satker.id}}</td>
+                <td>{{satker.name}}</td>
+                <td>{{satker.email}}</td>
+                <td>{{satker.type}}</td>
+                <td>{{satker.created_at}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -64,14 +64,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form @submit.prevent="createUser">
+          <form @submit.prevent="createSatker">
             <div class="modal-body">
               <div class="form-group">
                 <input
                   v-model="form.name"
                   type="text"
                   name="name"
-                  placeholder="Nama User"
+                  placeholder="Nama Satker"
                   class="form-control"
                   :class="{ 'is-invalid': form.errors.has('name') }"
                 />
@@ -93,7 +93,7 @@
                   v-model="form.bio"
                   id="bio"
                   name="bio"
-                  placeholder="Short bio for user (Optional)"
+                  placeholder="Short bio for satker (Optional)"
                   class="form-control"
                   :class="{ 'is-invalid': form.errors.has('bio') }"
                 />
@@ -108,9 +108,9 @@
                   class="form-control"
                   :class="{ 'is-invalid': form.errors.has('type') }"
                 >
-                  <option value>Select User Role</option>
+                  <option value>Select Satker Role</option>
                   <option value="admin">Admin</option>
-                  <option value="user">Standard User</option>
+                  <option value="user">Standard Satker</option>
                   <option value="author">Author</option>
                 </select>
                 <has-error :form="form" field="type"></has-error>
@@ -143,7 +143,7 @@
 export default {
   data() {
     return {
-      users: {},
+      satkerdt: {},
       form: new Form({
         name: "",
         email: "",
@@ -155,15 +155,15 @@ export default {
     };
   },
   methods: {
-    loadUsers() {
-      axios.get("api/user").then(({ data }) => (this.users = data.data));
+    loadSatkerdt() {
+      axios.get("api/satker").then(({ data }) => (this.satkerdt = data.data));
     },
-    createUser() {
-      this.form.post("api/user");
+    createSatker() {
+      this.form.post("api/satker");
     }
   },
   created() {
-    this.loadUsers();
+    this.loadSatkerdt();
   }
 };
 </script>

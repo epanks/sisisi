@@ -7,6 +7,11 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import { Form, HasError, AlertError } from 'vform';
+
+window.Form = Form;
+Vue.component(HasError.name, HasError);
+Vue.component(AlertError.name, AlertError);
 
 import VueRouter from 'vue-router';
 
@@ -15,7 +20,22 @@ Vue.use(VueRouter);
 let routes = [
 	{ path: '/dashboard', component: require('./components/Dashboard.vue').default },
 	{ path: '/users', component: require('./components/Users.vue').default },
-	{ path: '/profile', component: require('./components/Profile.vue').default }
+	{ path: '/satker', component: require('./components/balai/Satker.vue').default },
+	{ path: '/balai', component: require('./components/balai/Balai.vue').default },
+	{ path: '/paket', component: require('./components/progres/Paket.vue').default },
+	{ path: '/sungai_db', component: require('./components/database/Sungai.vue').default },
+	{ path: '/ma_db', component: require('./components/database/Ma.vue').default },
+	{ path: '/pah_db', component: require('./components/database/Pah.vue').default },
+	{ path: '/wdse_db', component: require('./components/database/Wdse.vue').default },
+	{ path: '/provinsi', component: require('./components/wilayah/Provinsi.vue').default },
+	{ path: '/kabupaten', component: require('./components/wilayah/Kabupaten.vue').default },
+	{ path: '/kecamatan', component: require('./components/wilayah/Kecamatan.vue').default },
+	{ path: '/desa', component: require('./components/wilayah/Desa.vue').default },
+	{ path: '/baseline', component: require('./components/eprogramming/Baseline.vue').default },
+	{ path: '/stock', component: require('./components/eprogramming/Stock.vue').default },
+	{ path: '/at_db', component: require('./components/database/AT.vue').default },
+	{ path: '/profile', component: require('./components/Profile.vue').default },
+	{ path: '/developer', component: require('./components/Developer.vue').default }
 ];
 
 const router = new VueRouter({
