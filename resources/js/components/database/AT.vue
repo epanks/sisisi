@@ -43,6 +43,8 @@
                 <td>{{at.nama_ws}}</td>
                 <td>{{at.provinsi}}</td>
                 <td>{{at.kota}}</td>
+                <td>{{at.kecamatan}}</td>
+                <td>{{at.desa}}</td>
                 <td>{{at.lintang_selatan}}</td>
                 <td>{{at.bujur_timur}}</td>
                 <td>{{at.elevasi_sumur}}</td>
@@ -218,11 +220,11 @@
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.status"
-                  type="text"
-                  name="status"Status"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('status') }"
+                v-model="form.status"
+                type="text"
+                name="status"Status"
+                class="form-control"
+                :class="{ 'is-invalid': form.errors.has('status') }"
                 />
                 <has-error :form="form" field="status"></has-error>
               </div>
@@ -253,8 +255,7 @@
                   <option value="author">Author</option>
                 </select>
                 <has-error :form="form" field="type"></has-error>
-              </div> -->
-
+              </div>-->
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -287,7 +288,7 @@ export default {
         bujur_timur: "",
         elevasi_sumur: "",
         status: "",
-        kriteria: "",
+        kriteria: ""
       })
     };
   },

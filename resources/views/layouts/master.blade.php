@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <router-link to="/satker" class="nav-link">
-                            <i class="fas fa-users nav-icon"></i>
+                            <i class="fas fa-users nav-icon teal"></i>
                             <p>Satker</p>
                         </router-link>
                     </li>
@@ -113,14 +113,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
                         <router-link to="/stock" class="nav-link">
-                          <i class="fas fa-building nav-icon"></i>
+                          <i class="fas fa-building nav-icon orange"></i>
                           <p>Stock</p>
                         </router-link>
                       </li>
 
                       <li class="nav-item">
                         <router-link to="/baseline" class="nav-link">
-                          <i class="nav-icon fas fa-list-alt"></i>
+                          <i class="nav-icon fas fa-list-alt purple"></i>
                           <p>Baseline</p>
                         </a>
                         </router-link>
@@ -137,15 +137,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <router-link to="/balai" class="nav-link">
-                          <i class="fas fa-building nav-icon"></i>
+                        <router-link to="/balai_progres" class="nav-link">
+                          <i class="fas fa-building nav-icon yellow"></i>
                           <p>Balai</p>
                         </router-link>
                       </li>
 
                       <li class="nav-item">
                         <router-link to="/paket" class="nav-link">
-                          <i class="nav-icon fas fa-list-alt"></i>
+                          <i class="nav-icon fas fa-list-alt red"></i>
                           <p>Paket</p>
                         </a>
                         </router-link>
@@ -163,19 +163,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
                         <router-link to="/balai" class="nav-link">
-                          <i class="fas fa-building nav-icon white"></i>
+                          <i class="fas fa-building nav-icon yellow"></i>
                           <p>Balai</p>
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link to="/at_db" class="nav-link">
-                          <i class="nav-icon fas fa-circle-notch"></i>
+                          <i class="nav-icon fas fa-circle-notch red"></i>
                           <p>Air Tanah</p>
                         </router-link>
                       </li>
                       <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                          <i class="fa fa-building nav-tint"></i>
+                          <i class="fa fa-building nav-tint blue"></i>
                           <p>Air Permukaan
                           <i class="right fa fa-angle-left"></i>
                           </p>
@@ -183,25 +183,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <ul class="nav nav-treeview">
                       <li class="nav-item">
                         <router-link to="/sungai_db" class="nav-link">
-                          <i class="fas fa-building nav-icon"></i>
+                          <i class="fas fa-building nav-icon blue"></i>
                           <p>Sungai</p>
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link to="/wdse_db" class="nav-link">
-                          <i class="fas fa-water nav-icon"></i>
+                          <i class="fas fa-water nav-icon orange"></i>
                           <p>Waduk</p>
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link to="/ma_db" class="nav-link">
-                          <i class="fas fa-circle nav-icon"></i>
+                          <i class="fas fa-circle nav-icon green"></i>
                           <p>Mata Air</p>
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link to="/pah_db" class="nav-link">
-                          <i class="fas fa-home nav-icon"></i>
+                          <i class="fas fa-home nav-icon red"></i>
                           <p>PAH</p>
                         </router-link>
                       </li>

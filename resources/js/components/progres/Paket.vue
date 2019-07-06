@@ -28,8 +28,13 @@
                 <th>Kode Jenis Paket</th>
                 <th>Kode Jenis Kons</th>
                 <th>Kode Output</th>
+                <th>ID Progres</th>
+                <th>ID Tayang</th>
+                <th>ID Kontrak</th>
                 <th>Tahun Anggaran</th>
                 <th>Kode Satker</th>
+                <th>ID Note</th>
+                <th>ID Masalah</th>
                 <th>Modify</th>
               </tr>
               <tr v-for="paket in paketdt" :key="paket.id">

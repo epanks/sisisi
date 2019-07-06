@@ -22,6 +22,7 @@ let routes = [
 	{ path: '/users', component: require('./components/Users.vue').default },
 	{ path: '/satker', component: require('./components/balai/Satker.vue').default },
 	{ path: '/balai', component: require('./components/balai/Balai.vue').default },
+	{ path: '/balai_progres', component: require('./components/progres/Balai_progres.vue').default },
 	{ path: '/paket', component: require('./components/progres/Paket.vue').default },
 	{ path: '/sungai_db', component: require('./components/database/Sungai.vue').default },
 	{ path: '/ma_db', component: require('./components/database/Ma.vue').default },
