@@ -15,7 +15,10 @@ class PaketController extends Controller
      */
     public function index()
     {
-        return Paket::latest()->paginate(10);
+        $model = Paket::all();
+        return response()->json([
+            'data' => $model
+        ]);
     }
 
     /**

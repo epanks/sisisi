@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Paketdt List</h3>
+          <h3 class="card-title">Paket Emon List</h3>
 
           <div class="card-tools">
             <button class="btn btn-success" data-toggle="modal" data-target="#addNew">
@@ -28,34 +28,20 @@
                 <th>Kode Jenis Paket</th>
                 <th>Kode Jenis Kons</th>
                 <th>Kode Output</th>
-                <th>ID Progres</th>
-                <th>ID Tayang</th>
-                <th>ID Kontrak</th>
-                <th>Tahun Anggaran</th>
-                <th>Kode Satker</th>
-                <th>ID Note</th>
-                <th>ID Masalah</th>
                 <th>Modify</th>
               </tr>
-              <tr v-for="paket in paketdt" :key="paket.id">
-                <td scope="row">{{paket.id}}</td>
-                <td>{{paket.nmpaket}}</td>
-                <td>{{paket.pagurmp}}</td>
-                <td>{{paket.output}}</td>
-                <td>{{paket.satoutput}}</td>
-                <td>{{paket.outcome}}</td>
-                <td>{{paket.satoutcome}}</td>
-                <td>{{paket.kdpengadaan}}</td>
-                <td>{{paket.kdjnspaket}}</td>
-                <td>{{paket.kdjnskon}}</td>
-                <td>{{paket.kdoutput}}</td>
-                <td>{{paket.id_progres}}</td>
-                <td>{{paket.id_tayang}}</td>
-                <td>{{paket.id_kontrak}}</td>
-                <td>{{paket.thnanggaran}}</td>
-                <td>{{paket.kdsatker}}</td>
-                <td>{{paket.id_note}}</td>
-                <td>{{paket.id_masalah}}</td>
+              <tr v-for="paket_emon in paket_emondt" :key="paket_emon.id">
+                <td scope="row">{{paket_emon.id}}</td>
+                <td>{{paket_emon.nmpaket}}</td>
+                <td>{{paket_emon.pagurmp}}</td>
+                <td>{{paket_emon.trgoutput}}</td>
+                <td>{{paket_emon.satoutput}}</td>
+                <td>{{paket_emon.trgoutcome}}</td>
+                <td>{{paket_emon.satoutcome}}</td>
+                <td>{{paket_emon.kdpengadaan}}</td>
+                <td>{{paket_emon.kdjnspaket}}</td>
+                <td>{{paket_emon.kdjnskon}}</td>
+                <td>{{paket_emon.kdoutput}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -90,7 +76,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form @submit.prevent="createPaket">
+          <form @submit.prevent="createPaket_emon">
             <div class="modal-body">
               <div class="form-group">
                 <input
@@ -119,12 +105,12 @@
                 <input
                   v-model="form.output"
                   type="number"
-                  name="output"
+                  name="trgoutput"
                   placeholder="Output"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('output') }"
+                  :class="{ 'is-invalid': form.errors.has('trgoutput') }"
                 />
-                <has-error :form="form" field="output"></has-error>
+                <has-error :form="form" field="trgoutput"></has-error>
               </div>
               <div class="form-group">
                 <input
@@ -141,12 +127,12 @@
                 <input
                   v-model="form.outcome"
                   type="number"
-                  name="outcome"
+                  name="trgoutcome"
                   placeholder="Outcome"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('outcome') }"
+                  :class="{ 'is-invalid': form.errors.has('trgoutcome') }"
                 />
-                <has-error :form="form" field="outcome"></has-error>
+                <has-error :form="form" field="trgoutcome"></has-error>
               </div>
               <div class="form-group">
                 <input
@@ -162,7 +148,7 @@
               <div class="form-group">
                 <input
                   v-model="form.kdpengadaan"
-                  type="text"
+                  type="number"
                   name="kdpengadaan"
                   placeholder="Kode Pengadaan"
                   class="form-control"
@@ -173,7 +159,7 @@
               <div class="form-group">
                 <input
                   v-model="form.kdjnspaket"
-                  type="text"
+                  type="number"
                   name="kdjnspaket"
                   placeholder="Kode Jenis Paket"
                   class="form-control"
@@ -203,50 +189,6 @@
                 />
                 <has-error :form="form" field="kdoutput"></has-error>
               </div>
-              <div class="form-group">
-                <input
-                  v-model="form.thnanggaran"
-                  type="number"
-                  name="thnanggaran"
-                  placeholder="Tahun Anggaran"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('thnanggaran') }"
-                />
-                <has-error :form="form" field="thnanggaran"></has-error>
-              </div>
-              <div class="form-group">
-                <input
-                  v-model="form.kdsatker"
-                  type="text"
-                  name="kdsatker"
-                  placeholder="Kode Satker"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('kdsatker') }"
-                />
-                <has-error :form="form" field="kdsatker"></has-error>
-              </div>
-              <div class="form-group">
-                <input
-                  v-model="form.id_note"
-                  type="number"
-                  name="id_note"
-                  placeholder="Note"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('id_note') }"
-                />
-                <has-error :form="form" field="id_note"></has-error>
-              </div>
-              <div class="form-group">
-                <input
-                  v-model="form.id_masalah"
-                  type="number"
-                  name="id_masalah"
-                  placeholder="Note"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('id_masalah') }"
-                />
-                <has-error :form="form" field="id_masalah"></has-error>
-              </div>
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -264,7 +206,7 @@
 export default {
   data() {
     return {
-      paketdt: {},
+      paket_emondt: {},
       form: new Form({
         nmpaket: "",
         pagurmp: "",
@@ -275,27 +217,22 @@ export default {
         kdpengadaan: "",
         kdjnspaket: "",
         kdjnskon: "",
-        kdoutput: "",
-        id_progres: "",
-        id_tayang: "",
-        id_kontrak: "",
-        thnanggaran: "",
-        kdsatker: "",
-        id_note: "",
-        id_masalah: ""
+        kdoutput: ""
       })
     };
   },
   methods: {
-    loadPaketdt() {
-      axios.get("api/paket").then(({ data }) => (this.paketdt = data.data));
+    loadPaket_emondt() {
+      axios
+        .get("api/paket_emon")
+        .then(({ data }) => (this.paket_emondt = data.data));
     },
-    createPaket() {
-      this.form.post("api/paket");
+    createPaket_emon() {
+      this.form.post("api/paket_emon");
     }
   },
   created() {
-    this.loadPaketdt();
+    this.loadPaket_emondt();
   }
 };
 </script>

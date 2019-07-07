@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Satker;
+use App\Paket_emon;
 
-class SatkerController extends Controller
+class Paket_emonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class SatkerController extends Controller
      */
     public function index()
     {
-        $model = Satker::all();
+        $model = Paket_emon::all();
         return response()->json([
             'data' => $model
         ]);
@@ -30,13 +30,20 @@ class SatkerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'kdsatker' => 'required|string|max:8',
-            'nmsatker' => 'required|string|min:127'
+            'nmpaket' => 'required|string|max:255'
         ]);
-        return Satker::create([
+        return Paket::create([
             'kdsatker' => $request['kdsatker'],
-            'nmsatker' => $request['nmsatker'],
-            'balai_id' => $request['balai_id']
+            'nmpaket' => $request['nmpaket'],
+            'pagurmp' => $request['pagurmp'],
+            'trgoutput' => $request['trgoutput'],
+            'satoutput' => $request['satoutput'],
+            'trgoutcome' => $request['trgoutcome'],
+            'satoutcome' => $request['satoutcome'],
+            'kdpengadaan' => $request['kdpengadaan'],
+            'kdjnspaket' => $request['kdjnspaket'],
+            'kdjnskon' => $request['kdjnskon'],
+            'kdoutput' => $request['kdoutput']
         ]);
     }
 

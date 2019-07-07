@@ -24,6 +24,7 @@ let routes = [
 	{ path: '/balai', component: require('./components/balai/Balai.vue').default },
 	{ path: '/balai_progres', component: require('./components/progres/Balai_progres.vue').default },
 	{ path: '/paket', component: require('./components/progres/Paket.vue').default },
+	{ path: '/paket_emon', component: require('./components/progres/Paket_emon.vue').default },
 	{ path: '/sungai_db', component: require('./components/database/Sungai.vue').default },
 	{ path: '/ma_db', component: require('./components/database/Ma.vue').default },
 	{ path: '/pah_db', component: require('./components/database/Pah.vue').default },

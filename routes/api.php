@@ -23,6 +23,7 @@ Route::apiResources(['kecamatan' => 'API\KecamatanController']);
 Route::apiResources(['kabupaten' => 'API\KabupatenController']);
 Route::apiResources(['desa' => 'API\DesaController']);
 Route::apiResources(['paket' => 'API\PaketController']);
+Route::apiResources(['paket_emon' => 'API\Paket_emonController']);
 Route::apiResources(['stock' => 'API\StockController']);
 Route::apiResources(['baseline' => 'API\BaselineController']);
 Route::apiResources(['wdse' => 'API\WdseController']);

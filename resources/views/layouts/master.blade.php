@@ -150,6 +150,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         </router-link>
                       </li>
+                      <li class="nav-item">
+                        <router-link to="/paket_emon" class="nav-link">
+                          <i class="nav-icon fas fa-list-alt blue"></i>
+                          <p>Paket Emonitoring</p>
+                        </a>
+                        </router-link>
+                      </li>
                     </ul>
                   </li>
                   <li class="nav-item has-treeview">
