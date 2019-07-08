@@ -15,7 +15,10 @@ class DesaController extends Controller
      */
     public function index()
     {
-        return Desa::latest()->paginate(10);
+        $model = Desa::all();
+        return response()->json([
+            'data' => $model
+        ]);
     }
 
     /**
@@ -27,16 +30,12 @@ class DesaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:225',
-            'password' => 'required|string|min:6'
+            'name' => 'required|string|max:225'
         ]);
         return Desa::create([
+            'id' => $request['id'],
             'name' => $request['name'],
-            'email' => $request['email'],
-            'type' => $request['type'],
-            'bio' => $request['bio'],
-            'photo' => $request['photo'],
-            'password' => $request['password']
+            'district_id' => $request['district_id']
         ]);
     }
 

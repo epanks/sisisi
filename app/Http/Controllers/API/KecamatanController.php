@@ -15,7 +15,10 @@ class KecamatanController extends Controller
      */
     public function index()
     {
-        return Kecamatan::latest()->paginate(10);
+        $model = Kabupaten::all();
+        return response()->json([
+            'data' => $model
+        ]);
     }
 
     /**
@@ -27,16 +30,12 @@ class KecamatanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:225',
-            'password' => 'required|string|min:6'
+            'name' => 'required|string|max:225'
         ]);
         return Kecamatan::create([
+            'id' => $request['id'],
             'name' => $request['name'],
-            'email' => $request['email'],
-            'type' => $request['type'],
-            'bio' => $request['bio'],
-            'photo' => $request['photo'],
-            'password' => $request['password']
+            'regency_id' => $request['regency_id']
         ]);
     }
 

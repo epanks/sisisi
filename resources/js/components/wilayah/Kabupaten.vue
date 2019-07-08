@@ -18,18 +18,14 @@
             <tbody>
               <tr>
                 <th>ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Type</th>
-                <th>Registered</th>
+                <th>ID Kabupaten</th>
+                <th>Nama Kecamatan</th>
                 <th>Modify</th>
               </tr>
               <tr v-for="kabupaten in kabupatendt" :key="kabupaten.id">
                 <td>{{kabupaten.id}}</td>
                 <td>{{kabupaten.name}}</td>
-                <td>{{kabupaten.email}}</td>
-                <td>{{kabupaten.type}}</td>
-                <td>{{kabupaten.created_at}}</td>
+                <td>{{kabupaten.province_id}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -68,10 +64,21 @@
             <div class="modal-body">
               <div class="form-group">
                 <input
+                  v-model="form.id"
+                  type="text"
+                  name="id"
+                  placeholder="ID Kecamatan"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('id') }"
+                />
+                <has-error :form="form" field="id"></has-error>
+              </div>
+              <div class="form-group">
+                <input
                   v-model="form.name"
                   type="text"
                   name="name"
-                  placeholder="Nama Kabupaten"
+                  placeholder="Nama Kecamatan"
                   class="form-control"
                   :class="{ 'is-invalid': form.errors.has('name') }"
                 />
@@ -79,52 +86,14 @@
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.email"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
+                  v-model="form.province_id"
+                  type="text"
+                  name="province_id"
+                  placeholder="ID Kabupaten"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('email') }"
+                  :class="{ 'is-invalid': form.errors.has('province_id') }"
                 />
-                <has-error :form="form" field="email"></has-error>
-              </div>
-              <div class="form-group">
-                <textarea
-                  v-model="form.bio"
-                  id="bio"
-                  name="bio"
-                  placeholder="Short bio for kabupaten (Optional)"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('bio') }"
-                />
-                <has-error :form="form" field="bio"></has-error>
-              </div>
-              <div class="form-group">
-                <select
-                  v-model="form.type"
-                  type="type"
-                  name="type"
-                  placeholder="type Address"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('type') }"
-                >
-                  <option value>Select Kabupaten Role</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">Standard Kabupaten</option>
-                  <option value="author">Author</option>
-                </select>
-                <has-error :form="form" field="type"></has-error>
-              </div>
-              <div class="form-group">
-                <input
-                  v-model="form.password"
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('password') }"
-                />
-                <has-error :form="form" field="password"></has-error>
+                <has-error :form="form" field="province_id"></has-error>
               </div>
             </div>
             <div class="modal-footer">
@@ -145,12 +114,9 @@ export default {
     return {
       kabupatendt: {},
       form: new Form({
+        id: "",
         name: "",
-        email: "",
-        password: "",
-        type: "",
-        bio: "",
-        photo: ""
+        province_id: ""
       })
     };
   },

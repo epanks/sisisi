@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kabupaten extends Model
 {
-    protected $table = 'users';
+    protected $table = 'tblkabupaten';
 
 
     protected $fillable = [
-        'name', 'email', 'password', 'bio', 'type', 'photo'
-    ];
-
-
-    protected $hidden = [
-        'password', 'remember_token',
+        'id', 'name', 'province_id'
     ];
 }

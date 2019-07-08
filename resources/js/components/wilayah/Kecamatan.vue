@@ -18,18 +18,14 @@
             <tbody>
               <tr>
                 <th>ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Type</th>
-                <th>Registered</th>
+                <th>Nama Kecamatan</th>
+                <th>ID Kabupaten</th>
                 <th>Modify</th>
               </tr>
               <tr v-for="kecamatan in kecamatandt" :key="kecamatan.id">
                 <td>{{kecamatan.id}}</td>
                 <td>{{kecamatan.name}}</td>
-                <td>{{kecamatan.email}}</td>
-                <td>{{kecamatan.type}}</td>
-                <td>{{kecamatan.created_at}}</td>
+                <td>{{kecamatan.regency_id}}</td>
                 <td>
                   <a href="#">
                     <i class="fa fa-edit blue"></i>
@@ -68,6 +64,17 @@
             <div class="modal-body">
               <div class="form-group">
                 <input
+                  v-model="form.id"
+                  type="text"
+                  name="id"
+                  placeholder="ID Kecamatan"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('id') }"
+                />
+                <has-error :form="form" field="id"></has-error>
+              </div>
+              <div class="form-group">
+                <input
                   v-model="form.name"
                   type="text"
                   name="name"
@@ -79,52 +86,14 @@
               </div>
               <div class="form-group">
                 <input
-                  v-model="form.email"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
+                  v-model="form.regency_id"
+                  type="text"
+                  name="regency_id"
+                  placeholder="Kode Kabupaten"
                   class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('email') }"
+                  :class="{ 'is-invalid': form.errors.has('regency_id') }"
                 />
-                <has-error :form="form" field="email"></has-error>
-              </div>
-              <div class="form-group">
-                <textarea
-                  v-model="form.bio"
-                  id="bio"
-                  name="bio"
-                  placeholder="Short bio for kecamatan (Optional)"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('bio') }"
-                />
-                <has-error :form="form" field="bio"></has-error>
-              </div>
-              <div class="form-group">
-                <select
-                  v-model="form.type"
-                  type="type"
-                  name="type"
-                  placeholder="type Address"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('type') }"
-                >
-                  <option value>Select Kecamatan Role</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">Standard Kecamatan</option>
-                  <option value="author">Author</option>
-                </select>
-                <has-error :form="form" field="type"></has-error>
-              </div>
-              <div class="form-group">
-                <input
-                  v-model="form.password"
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('password') }"
-                />
-                <has-error :form="form" field="password"></has-error>
+                <has-error :form="form" field="regency_id"></has-error>
               </div>
             </div>
             <div class="modal-footer">
@@ -145,12 +114,9 @@ export default {
     return {
       kecamatandt: {},
       form: new Form({
+        id: "",
         name: "",
-        email: "",
-        password: "",
-        type: "",
-        bio: "",
-        photo: ""
+        regency_id: ""
       })
     };
   },

@@ -258,6 +258,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </li>
                     </ul>
                   </li>
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-mountain blue"></i>
+                      <p>
+                        Wilayah Sungai
+                        <i class="right fa fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <router-link to="/ws" class="nav-link">
+                          <i class="fas fa-bacon nav-icon green"></i>
+                          <p>WS</p>
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/das" class="nav-link">
+                            <i class="fas fa-map-marked nav-icon purple"></i>
+                            <p>DAS</p>
+                        </router-link>
+                    </li>
+                        <li class="nav-item">
+                            <router-link to="/cat" class="nav-link">
+                                <i class="fas fa-trash-restore-alt nav-icon red"></i>
+                                <p>CAT</p>
+                            </router-link>
+                        </li>
+                      <li class="nav-item">
+                        <router-link to="/balai" class="nav-link">
+                          <i class="nav-icon fas fa-building blue"></i>
+                          <p>Balai</p>
+                        </a>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

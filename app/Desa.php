@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Desa extends Model
 {
-    protected $table = 'users';
+    protected $table = 'tbldesa';
 
 
     protected $fillable = [
-        'name', 'email', 'password', 'bio', 'type', 'photo'
-    ];
-
-
-    protected $hidden = [
-        'password', 'remember_token',
+        'id', 'name', 'district_id'
     ];
 }
