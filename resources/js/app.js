@@ -18,13 +18,13 @@ import Swal from 'sweetalert2';
 window.Swal = Swal;
 
 const Toast = Swal.mixin({
-	Toast: true,
+	toast: true,
 	position: 'top-end',
 	showConfirmButton: false,
 	timer: 3000
 });
 
-window.toast = Toast;
+window.Toast = Toast;
 
 window.Form = Form;
 Vue.component(HasError.name, HasError);
@@ -97,6 +97,12 @@ window.Fire = new Vue();
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
+Vue.component('passport-clients', require('./components/passport/Clients.vue').default);
+
+Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue').default);
+
+Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue').default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 

@@ -155,7 +155,7 @@ export default {
         password: "",
         type: "",
         bio: "",
-        photo: ""
+        photo: "",
       })
     };
   },
