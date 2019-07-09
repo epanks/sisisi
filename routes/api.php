@@ -33,3 +33,5 @@ Route::apiResources(['ma' => 'API\MaController']);
 Route::apiResources(['at' => 'API\ATController']);
 Route::apiResources(['balai' => 'API\BalaiController']);
 Route::apiResources(['satker' => 'API\SatkerController']);
+Route::get('profile', 'API\UserController@profile');
+Route::put('profile', 'API\UserController@updateProfile');
